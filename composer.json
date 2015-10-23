@@ -1,0 +1,10 @@
+{
+    "name": "mike/pw-ue-blog",
+    "authors": [
+        {
+            "name": "Michael Haeuslmann",
+            "email": "haeuslmann@gmail.com"
+        }
+    ],
+    "require": {}
+}
