@@ -6,17 +6,25 @@ class Article
 {
     private $headline;
     private $body;
-    private $tags;
 
-    public function __construct(\string $headline, \string $body, \string $tags)
+    /**
+     * @var TagCollection
+     */
+    private $tagCollection;
+
+    public function __construct(\string $headline, \string $body)
     {
         $this->headline = $headline;
         $this->body = $body;
-        $this->tags = $tags;
     }
 
     public function headline() : \string
     {
         return $this->headline;
+    }
+
+    public function addTag(Tag $tag)
+    {
+        $this->tagCollection->addTag($tag);
     }
 }

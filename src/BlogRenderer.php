@@ -13,7 +13,8 @@ class BlogRenderer
 
     public function render(Blog $blog)
     {
-        foreach ($blog->articles() as $article) {
+        /** @var Article $article */
+        foreach ($blog->articleCollection() as $article) {
             $this->console->printLine($article->headline());
         }
     }

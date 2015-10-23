@@ -4,17 +4,26 @@ namespace Mihaeu\Blog;
 
 class Blog
 {
-    private $articles;
+    private $articleCollection;
     private $name;
 
-    public function __construct(\string $name, array $articles)
+    public function __construct(\string $name)
     {
         $this->name = $name;
-        $this->articles = $articles;
+        $this->articleCollection = new ArticleCollection();
     }
 
-    public function articles() : array
+    public function publishArticleFromUser(Article $article, User $user)
     {
-        return $this->articles;
+        if ($user->canPublish()) {
+            $this->articleCollection->addArticle($article);
+        } else {
+            throw new \Exception('No access');
+        }
+    }
+
+    public function articleCollection() : array
+    {
+        return $this->articleCollection->articles();
     }
 }
