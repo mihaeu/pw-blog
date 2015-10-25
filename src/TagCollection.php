@@ -2,7 +2,7 @@
 
 namespace Mihaeu\Blog;
 
-class TagCollection
+class TagCollection implements \IteratorAggregate
 {
     private $tags = [];
 
@@ -11,8 +11,8 @@ class TagCollection
         $this->tags[] = $tag;
     }
 
-    public function tags() : array
+    public function getIterator()
     {
-        return $this->tags;
+        return new \ArrayIterator($this->tags);
     }
 }

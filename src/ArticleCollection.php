@@ -2,17 +2,17 @@
 
 namespace Mihaeu\Blog;
 
-class ArticleCollection
+class ArticleCollection implements \IteratorAggregate
 {
     private $articles = [];
-
-    public function articles()
-    {
-        return $this->articles;
-    }
 
     public function addArticle(Article $article)
     {
         $this->articles[] = $article;
+    }
+
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->articles);
     }
 }

@@ -22,8 +22,8 @@ class Blog
         }
     }
 
-    public function articleCollection() : array
+    public function articleCollection() : ArticleCollection
     {
-        return $this->articleCollection->articles();
+        return $this->articleCollection;
     }
 }
