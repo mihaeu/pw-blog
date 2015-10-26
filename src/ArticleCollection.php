@@ -4,6 +4,7 @@ namespace Mihaeu\Blog;
 
 class ArticleCollection implements \IteratorAggregate
 {
+    /** @var Article[] */
     private $articles = [];
 
     public function addArticle(Article $article)
@@ -11,7 +12,7 @@ class ArticleCollection implements \IteratorAggregate
         $this->articles[] = $article;
     }
 
-    public function getIterator()
+    public function getIterator() : \ArrayIterator
     {
         return new \ArrayIterator($this->articles);
     }

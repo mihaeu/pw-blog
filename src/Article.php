@@ -7,15 +7,14 @@ class Article
     private $headline;
     private $body;
 
-    /**
-     * @var TagCollection
-     */
+    /** @var TagCollection */
     private $tagCollection;
 
     public function __construct(\string $headline, \string $body)
     {
         $this->headline = $headline;
         $this->body = $body;
+        $this->tagCollection = new TagCollection();
     }
 
     public function headline() : \string
