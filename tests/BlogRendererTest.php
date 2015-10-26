@@ -26,22 +26,21 @@ class BlogRendererTest extends \PHPUnit_Framework_TestCase
         $this->blogRenderer = new BlogRenderer($this->mockConsole);
     }
 
-    public function testRendersAllBlogArticles()
+    public function testRendersAnArticle()
     {
-        $article1 = new Article('Lorem Ipsum', 'Bla ....', 'stuff,text');
-        $article2 = new Article('Lorem Ipsum2', 'Bla2 ....', 'stuff,text');
-        $article3 = new Article('Lorem Ipsum3', 'Bla3 ....', 'stuff,text');
+        $article1 = new Article('Test Headline!', 'Bla ....');
+        $article1->addTag(new Tag("Tag1"));
+        $article1->addTag(new Tag("Tag2"));
 
         $blog = new Blog('My blog');
         $owner = new User('owner@blog.de', true);
 
         $blog->publishArticleFromUser($article1, $owner);
-        $blog->publishArticleFromUser($article2, $owner);
-        $blog->publishArticleFromUser($article3, $owner);
 
         $this->blogRenderer->render($blog);
 
-        $this->assertEquals("Lorem Ipsum\nLorem Ipsum2\nLorem Ipsum3\n", $this->mockConsole->output);
+        $expected = "Test Headline!\nTag1, Tag2\nBla ....\n";
+        $this->assertEquals($expected, $this->mockConsole->output);
     }
 }
 

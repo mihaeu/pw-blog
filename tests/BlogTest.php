@@ -21,6 +21,6 @@ class BlogTest extends \PHPUnit_Framework_TestCase
         $article = new Article('Test', 'Bla');
 
         $blog->publishArticleFromUser($article, $owner);
-        $this->assertEquals(1, count($blog->articleCollection()));
+        $this->assertEquals(1, count($blog->articles()));
     }
 }

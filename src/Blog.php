@@ -22,7 +22,7 @@ class Blog
         }
     }
 
-    public function articleCollection() : ArticleCollection
+    public function articles() : ArticleCollection
     {
         return $this->articleCollection;
     }

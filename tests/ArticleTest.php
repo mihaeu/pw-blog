@@ -14,5 +14,9 @@ class ArticleTest extends \PHPUnit_Framework_TestCase
     {
         $article = new Article('test', 'test');
         $article->addTag(new Tag('test'));
+        /** @var Tag $tag */
+        foreach ($article->tags() as $tag) {
+            $this->assertEquals('test', $tag->name());
+        }
     }
 }

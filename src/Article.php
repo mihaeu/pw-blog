@@ -22,8 +22,18 @@ class Article
         return $this->headline;
     }
 
+    public function body() : \string
+    {
+        return $this->body;
+    }
+
     public function addTag(Tag $tag)
     {
         $this->tagCollection->addTag($tag);
+    }
+
+    public function tags() : TagCollection
+    {
+        return $this->tagCollection;
     }
 }

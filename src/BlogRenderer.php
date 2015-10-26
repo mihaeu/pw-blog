@@ -14,8 +14,15 @@ class BlogRenderer
     public function render(Blog $blog)
     {
         /** @var Article $article */
-        foreach ($blog->articleCollection() as $article) {
+        foreach ($blog->articles() as $article) {
             $this->console->printLine($article->headline());
+            $tags = [];
+            /** @var Tag $tag */
+            foreach ($article->tags() as $tag) {
+                $tags[] = $tag->name();
+            }
+            $this->console->printLine(implode(', ', $tags));
+            $this->console->printLine($article->body());
         }
     }
 }
