@@ -32,8 +32,8 @@ class BlogRendererTest extends \PHPUnit_Framework_TestCase
         $article1->addTag(new Tag("Tag1"));
         $article1->addTag(new Tag("Tag2"));
 
-        $blog = new Blog('My blog');
-        $owner = new User('owner@blog.de', true);
+        $owner = new User('owner@blog.de');
+        $blog = new Blog('My blog', $owner);
 
         $blog->publishArticleFromUser($article1, $owner);
 
