@@ -13,6 +13,9 @@ class BlogRenderer
 
     public function render(Blog $blog)
     {
+        $this->console->printLine($blog->name());
+        $this->console->printLine('');
+
         /** @var Article $article */
         foreach ($blog->articles() as $article) {
             $this->console->printLine($article->headline());

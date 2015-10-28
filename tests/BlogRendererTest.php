@@ -33,13 +33,18 @@ class BlogRendererTest extends \PHPUnit_Framework_TestCase
         $article1->addTag(new Tag("Tag2"));
 
         $owner = new User('owner@blog.de');
-        $blog = new Blog('My blog', $owner);
+        $blog = new Blog('My Blog', $owner);
 
         $blog->publishArticleFromUser($article1, $owner);
 
         $this->blogRenderer->render($blog);
 
-        $expected = "Test Headline!\nTag1, Tag2\nBla ....\n";
+        $expected =
+            'My Blog'.PHP_EOL
+            .PHP_EOL
+            .'Test Headline!'.PHP_EOL
+            .'Tag1, Tag2'.PHP_EOL
+            .'Bla ....'.PHP_EOL;
         $this->assertEquals($expected, $this->mockConsole->output);
     }
 }

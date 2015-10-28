@@ -28,4 +28,9 @@ class Blog
     {
         return $this->articleCollection;
     }
+
+    public function name() : \string
+    {
+        return $this->name;
+    }
 }
