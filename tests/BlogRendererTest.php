@@ -32,7 +32,7 @@ class BlogRendererTest extends \PHPUnit_Framework_TestCase
         $article1->addTag(new Tag("Tag1"));
         $article1->addTag(new Tag("Tag2"));
 
-        $owner = new User('owner@blog.de');
+        $owner = new User(new Email('owner@blog.de'));
         $blog = new Blog('My Blog', $owner);
 
         $blog->publishArticleFromUser($article1, $owner);
@@ -57,7 +57,7 @@ class BlogRendererTest extends \PHPUnit_Framework_TestCase
         $article2->addTag(new Tag("Tag1"));
         $article2->addTag(new Tag("Tag2"));
 
-        $owner = new User('owner@blog.de');
+        $owner = new User(new Email('owner@blog.de'));
         $blog = new Blog('My Blog', $owner);
 
         $blog->publishArticleFromUser($article1, $owner);
