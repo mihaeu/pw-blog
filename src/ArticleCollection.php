@@ -2,7 +2,7 @@
 
 namespace Mihaeu\Blog;
 
-class ArticleCollection implements \IteratorAggregate
+class ArticleCollection implements \IteratorAggregate, \Countable
 {
     /** @var Article[] */
     private $articles = [];
@@ -15,5 +15,10 @@ class ArticleCollection implements \IteratorAggregate
     public function getIterator() : \ArrayIterator
     {
         return new \ArrayIterator($this->articles);
+    }
+
+    public function count()
+    {
+        return count($this->articles);
     }
 }
