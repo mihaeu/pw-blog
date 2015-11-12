@@ -2,27 +2,20 @@
 
 ## Getting started
 
+Make sure you have PHP 7 installed and global composer:
+
 ```bash
-# make sure you have PHP 7 installed and global composer
-
+git clone https://github.com/mihaeu/pw-blog
+cd pw-blog
 composer install
-npm install
-
-# Grunt is used to watch for changes and automatically run tests
-grunt
 ```
 
 ## Tests
 
-Xdebug doesn't work with PHP 7 yet, but PHPUnit 4.8+ supports PHPDBG as well:
-
 ```bash
-phpdbg -qrr vendor/bin/phpunit --testdox
-```
+vendor/bin/phpunit --testdox
+PHPUnit 5.0.9 by Sebastian Bergmann and contributors.
 
-produces:
-
-```
 Mihaeu\Blog\ArticleCollection
  [x] Adds new articles
 
@@ -32,13 +25,19 @@ Mihaeu\Blog\Article
 
 Mihaeu\Blog\BlogRenderer
  [x] Renders an article
+ [x] Renders many articles
 
 Mihaeu\Blog\Blog
  [x] Normal user can not publish
  [x] Owner can publish
+ [x] Author can publish
 
 Mihaeu\Blog\Console
  [x] Writes to standard out
+
+Mihaeu\Blog\Email
+ [x] Accepts valid email
+ [x] Does not accept invalid email
 
 Mihaeu\Blog\TagCollection
  [x] Adds new tags to collection
