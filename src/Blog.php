@@ -8,7 +8,7 @@ class Blog
     private $name;
     private $owner;
 
-    public function __construct(\string $name, User $owner)
+    public function __construct(string $name, User $owner)
     {
         $this->name = $name;
         $this->owner = $owner;
@@ -29,7 +29,7 @@ class Blog
         return $this->articleCollection;
     }
 
-    public function name() : \string
+    public function name() : string
     {
         return $this->name;
     }

@@ -11,7 +11,7 @@ class Tag
         $this->tagName = $tagName;
     }
 
-    public function name() : \string
+    public function name() : string
     {
         return $this->tagName;
     }

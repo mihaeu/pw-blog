@@ -10,19 +10,19 @@ class Article
     /** @var TagCollection */
     private $tagCollection;
 
-    public function __construct(\string $headline, \string $body)
+    public function __construct(string $headline, string $body)
     {
         $this->headline = $headline;
         $this->body = $body;
         $this->tagCollection = new TagCollection();
     }
 
-    public function headline() : \string
+    public function headline() : string
     {
         return $this->headline;
     }
 
-    public function body() : \string
+    public function body() : string
     {
         return $this->body;
     }

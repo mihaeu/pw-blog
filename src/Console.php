@@ -4,7 +4,7 @@ namespace Mihaeu\Blog;
 
 class Console
 {
-    public function printLine(\string $line)
+    public function printLine(string $line)
     {
         echo $line . PHP_EOL;
     }
